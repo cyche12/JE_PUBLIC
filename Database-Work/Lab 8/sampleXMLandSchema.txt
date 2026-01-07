@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Root>
+  <EmployeeInfo>
+    <Name>Jane Winston</Name>
+    <Date>2001-01-01</Date>
+    <Code>0001</Code>
+  </EmployeeInfo>
+  <ExpenseItem>
+    <Date>2001-01-01</Date>
+    <Description>Airfare</Description>
+    <Amount>500.34</Amount>
+  </ExpenseItem>
+  <ExpenseItem>
+    <Date>2001-01-01</Date>
+    <Description>Hotel</Description>
+    <Amount>200</Amount>
+  </ExpenseItem>
+  <ExpenseItem>
+    <Date>2001-01-01</Date>
+    <Description>Taxi Fare</Description>
+    <Amount>100.00</Amount>
+  </ExpenseItem>
+  <ExpenseItem>
+    <Date>2001-01-01</Date>
+    <Description>Long Distance Phone Charges</Description>
+    <Amount>57.89</Amount>
+  </ExpenseItem>
+  <ExpenseItem>
+    <Date>2001-01-01</Date>
+    <Description>Food</Description>
+    <Amount>82.19</Amount>
+  </ExpenseItem>
+  <ExpenseItem>
+    <Date>2001-01-02</Date>
+    <Description>Food</Description>
+    <Amount>17.89</Amount>
+  </ExpenseItem>
+  <ExpenseItem>
+    <Date>2001-01-02</Date>
+    <Description>Personal Items</Description>
+    <Amount>32.54</Amount>
+  </ExpenseItem>
+  <ExpenseItem>
+    <Date>2001-01-03</Date>
+    <Description>Taxi Fare</Description>
+    <Amount>75.00</Amount>
+  </ExpenseItem>
+  <ExpenseItem>
+    <Date>2001-01-03</Date>
+    <Description>Food</Description>
+    <Amount>36.45</Amount>
+  </ExpenseItem>
+  <ExpenseItem>
+    <Date>2001-01-03</Date>
+    <Description>New Suit</Description>
+    <Amount>750.00</Amount>
+  </ExpenseItem>
+</Root>
+
+ 
+Sample XML schema (Expenses.xsd) 
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="Root">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="1" name="EmployeeInfo">
+          <xsd:complexType>
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="Name" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="Date" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="Code" />
+            </xsd:all>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" name="ExpenseItem">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Date" type="xsd:date"/>
+              <xsd:element name="Description" type="xsd:string"/>
+              <xsd:element name="Amount" type="xsd:decimal" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
