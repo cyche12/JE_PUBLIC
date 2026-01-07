@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"databank.config"},{"l":"databank.dao"},{"l":"databank.jsf"},{"l":"databank.model"}];updateSearchResults();

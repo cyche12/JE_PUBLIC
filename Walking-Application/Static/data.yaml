@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 6
+names: ['Building', 'Door', 'boundaryof property', 'curb', 'obstacle', 'walkways']
+
+roboflow:
+  workspace: 25s-cst8319-310-team-3
+  project: instance-segmentation-8wkil
+  version: 4
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/25s-cst8319-310-team-3/instance-segmentation-8wkil/dataset/4

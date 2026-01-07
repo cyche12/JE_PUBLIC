@@ -1,0 +1,132 @@
+/* Static/styles.css */
+
+/*──────────────────────────────────────────────────────────────────────────
+  Base page styling
+──────────────────────────────────────────────────────────────────────────*/
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+/*──────────────────────────────────────────────────────────────────────────
+  Controls (address selector + analyze button)
+  — wrap your <label>, <select> and <button> inside:
+      <div id="controls"> … </div>
+──────────────────────────────────────────────────────────────────────────*/
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#controls label {
+  font-size: 16px;
+}
+
+#controls select,
+#controls button {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#controls button {
+  background-color: #007BFF;
+  color: #fff;
+  cursor: pointer;
+}
+
+#controls button:hover {
+  background-color: #0056b3;
+}
+
+/*──────────────────────────────────────────────────────────────────────────
+  Loader indicator (if you choose to show one)
+──────────────────────────────────────────────────────────────────────────*/
+.loader {
+  text-align: center;
+  color: #007BFF;
+  margin: 16px auto;
+  display: none;        /* JS can switch this to `block` during analysis */
+  font-weight: bold;
+}
+
+/*──────────────────────────────────────────────────────────────────────────
+  Preview section
+  — this matches your <section id="previewSection"> in index.html
+──────────────────────────────────────────────────────────────────────────*/
+#previewSection {
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.preview-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.preview-container figure {
+  margin: 0;
+  text-align: center;
+}
+
+.preview-container img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border: 2px solid #888;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  background: #fff;
+}
+
+/*──────────────────────────────────────────────────────────────────────────
+  Distance result
+──────────────────────────────────────────────────────────────────────────*/
+.result {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/*──────────────────────────────────────────────────────────────────────────
+  Responsive tweaks
+──────────────────────────────────────────────────────────────────────────*/
+@media (max-width: 600px) {
+  #controls {
+    flex-direction: column;
+  }
+  #controls select,
+  #controls button {
+    width: 100%;
+  }
+  .preview-container {
+    flex-direction: column;
+  }
+  .preview-container img {
+    max-width: 90%;
+  }
+}

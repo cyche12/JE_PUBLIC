@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:jsf="http://xmlns.jcp.org/jsf"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:f="http://xmlns.jcp.org/jsf/core"
+  xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+  >
+  <!-- View that edits existing physician -->
+
+  <h:head>
+    <!-- Title of tab/window in browser -->
+    <title>#{uiconsts['updateLabel']}</title>
+  </h:head>
+  
+  <h:body>
+    <h2>#{uiconsts['updateLabel']}</h2>
+    <br/>
+   
+    <h:form>
+		<h:outputText value="#{uiconsts['columnLabel_Id']}" />
+	    <h:inputText value="#{editingPhysician.id}" readonly="true" />
+	
+		<br />
+		
+	    <h:outputText value="#{uiconsts['columnLabel_FirstName']}" />
+	    <h:inputText value="#{editingPhysician.firstName}"/>
+	
+		<br />
+	    
+	    <h:outputText value="#{uiconsts['columnLabel_LastName']}" />
+	    <h:inputText value="#{editingPhysician.lastName}" />
+	
+		<br />
+		
+	    <h:outputText value="#{uiconsts['columnLabel_Email']}" />
+	    <h:inputText value="#{editingPhysician.email}"/>
+	    
+	    <br />
+	    
+	    <h:outputText value="#{uiconsts['columnLabel_PhoneNumber']}" />
+	    <h:inputText value="#{editingPhysician.phoneNumber}"/>
+	    
+	    <br />
+	    
+	    <h:outputText value="#{uiconsts['columnLabel_Specialty']}" />
+	    <h:selectOneMenu value="#{editingPhysician.specialty}">
+	    	<f:selectItem itemLabel="Select Specialty" itemValue="" noSelectionOption="true"/>
+        	<f:selectItems value="#{physicianController.getSpecialties()}" var="specialty"
+				itemValue="#{specialty}" itemLabel="#{specialty}"/>
+		</h:selectOneMenu>
+	    
+	    <br />
+	    
+	    <h:commandButton value="#{uiconsts['editButtonLabel']}"
+	    	action="#{physicianController.submitUpdatedPhysician(editingPhysician)}" />
+	    <h:outputLink value="list-physicians.xhtml">Back</h:outputLink>
+    
+    </h:form>
+    
+  </h:body>
+</html>
